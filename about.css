@@ -1,0 +1,368 @@
+/*About content*/
+.two-column-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  gap: 40px;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.text-content h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.text-content .subtitle {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.features li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.5;
+}
+
+.features i {
+  color: #28a745;
+  margin-right: 10px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.image-content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.image-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 0px;
+  display: block;
+}
+/* Scroll-up animation */
+.scroll-up {
+  animation: scrollUp 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@keyframes scrollUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Counts Section */
+.counts {
+  background: #f6f0f0;
+  padding: 50px 0;
+  text-align: center;
+}
+.counts-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.count-box h2 {
+  color: #5fcf80;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+.count-box p {
+  color: #777;
+}
+/* <testimonials section> */
+
+
+.testimonials-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.section-title span {
+  color: #aaa;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.section-title span::after {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 2px;
+  background-color: #58d68d;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.section-title h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #2c2f31;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.slider {
+  overflow: hidden;
+  position: relative;
+  height: 260px;
+  margin-top: 40px;
+}
+
+.slides {
+  display: flex;
+  width: 200%;
+  animation: slide 5s infinite;
+}
+/* Slide-in-up animation */
+@keyframes slideUpFadeIn {
+  0% {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.testimonials-section {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(60px);
+  animation: slideUpFadeIn 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+
+.testimonial {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  margin: 0 10px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.user-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.user-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.user-info p {
+  margin: 2px 0;
+  color: #999;
+  font-size: 14px;
+}
+
+.stars {
+  color: #ffc107;
+  font-size: 16px;
+}
+
+blockquote p {
+  font-style: italic;
+  font-size: 15px;
+  color: #555;
+  position: relative;
+  line-height: 1.6;
+}
+
+.quote {
+  color: #58d68d;
+  font-size: 24px;
+  vertical-align: middle;
+  font-style: normal;
+}
+
+/* Slider Animation */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  45% { transform: translateX(0); }
+  50% { transform: translateX(-50%); }
+  95% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+/* Responsive adjustments for screens up to 768px */
+@media (max-width: 768px) {
+
+  /* Make the two-column section stack vertically */
+  .two-column-section {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+    margin: 20px auto;
+  }
+
+  /* Make sure images scale properly */
+  .image-content img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Testimonials slider: stack testimonials vertically */
+  .testimonial {
+    width: 100% !important; /* override fixed 50% width */
+    margin: 10px 0;
+    box-sizing: border-box;
+  }
+
+  /* Slider container height auto to fit stacked testimonials */
+  .slider {
+    height: auto;
+  }
+
+  /* Container padding adjustments */
+  .testimonials-section,
+  .counts {
+    padding: 20px 15px;
+    margin: 0 auto;
+  }
+}
+  @media (max-width: 768px) {
+  .counts-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .count-box {
+    margin: 0 auto;
+    max-width: 200px;
+  }
+}
+
+/* Make header items stay in one row */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  position: relative;
+  flex-wrap: nowrap; /* Important to prevent wrap */
+}
+
+/* Style for logo */
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Hide checkbox */
+.nav-toggle {
+  display: none;
+}
+
+/* Hamburger icon hidden by default */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Show hamburger only on small screens */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .btn-get-started {
+  display: inline-block;
+}
+
+
+  /* Hide nav and button initially */
+  .nav-links,
+  .btn-get-started {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 70px; /* Adjust based on header height */
+    right: 0;
+    left: 0;
+    padding: 20px;
+    text-align: start;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Show when toggled */
+  .nav-toggle:checked + .hamburger + .btn-get-started,
+  .nav-toggle:checked + .hamburger + .btn-get-started + .nav-links {
+    display: flex;
+  }
+}
+
+/* Prevent overlap in desktop view */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .btn-get-started {
+    display: inline-block;
+  }
+}
+
+
+  /* Navigation and header tweaks if needed
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  /* Button full width */
+  /* .btn-get-started {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+} */
